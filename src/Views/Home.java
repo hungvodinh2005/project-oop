@@ -46,12 +46,16 @@ public class Home {
         
         budget.setBackground(new Color(70, 130, 180));
         budget.setForeground(Color.WHITE);
+        budget.setFont(new Font("Arial", Font.BOLD, 18));
         transaction.setBackground(new Color(46, 139, 87));
         transaction.setForeground(Color.WHITE);
+        transaction.setFont(new Font("Arial", Font.BOLD, 18));
         category.setBackground(new Color(255, 140, 0));
         category.setForeground(Color.WHITE);
+        category.setFont(new Font("Arial", Font.BOLD, 18));
         report.setBackground(new Color(220, 20, 60));
         report.setForeground(Color.WHITE);
+        report.setFont(new Font("Arial", Font.BOLD, 18));
         sider.add(budget);
         sider.add(transaction);
         sider.add(category);

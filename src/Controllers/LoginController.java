@@ -8,10 +8,7 @@ import java.sql.Connection;
 import Connect.connectMysql;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-/**
- *
- * @author DINHHUNG
- */
+
 public class LoginController {
     public boolean check(String user,String password){
         String sql="SELECT * FROM users WHERE username = ? AND password = ?";

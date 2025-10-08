@@ -3,12 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/assignment/src/Views/Home.java</file>
-            <file>file:/E:/assignment/src/Views/ReportPanel.java</file>
             <file>file:/E:/assignment/src/Views/Login.java</file>
+            <file>file:/E:/assignment/src/Controllers/LoginController.java</file>
+            <file>file:/E:/assignment/src/Views/Home.java</file>
             <file>file:/E:/assignment/src/Connect/connectMysql.java</file>
+            <file>file:/E:/assignment/src/Views/TransactionPanel.java</file>
+            <file>file:/E:/assignment/src/Views/ReportPanel.java</file>
+            <file>file:/E:/assignment/src/Models/Budget.java</file>
+            <file>file:/E:/assignment/src/Models/Category.java</file>
+            <file>file:/E:/assignment/src/Models/Transaction.java</file>
+            <file>file:/E:/assignment/src/Models/User.java</file>
             <file>file:/E:/assignment/src/Views/BudgetPanel.java</file>
-            <file>file:/E:/assignment/src/Controllers/Login.java</file>
+            <file>file:/E:/assignment/src/Views/CategoryPanel.java</file>
         </group>
     </open-files>
 </project-private>
