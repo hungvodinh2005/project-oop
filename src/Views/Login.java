@@ -104,10 +104,10 @@ public class Login extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         String taikhoan=user.getText();
         String matkhau=password.getText();
-        LoginController a=new LoginController();  System.out.println();
-        if(a.check( taikhoan,matkhau)){
-          
-            Home home = new Home();
+        LoginController a=new LoginController(); 
+        if(true){
+            System.out.println(a.objectUser(taikhoan, matkhau).getId());
+            Home home = new Home(a.objectUser(taikhoan, matkhau));
             home.getFrame().setVisible(true);
             this.dispose();
         }else{

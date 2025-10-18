@@ -1,5 +1,6 @@
 package Views;
 
+import Models.User;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
 public class Home {
     private JFrame frame;
 
-    public Home() {
+    public Home(User user) {
         frame=new JFrame("Trang chu");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setSize(screenSize.width, screenSize.height);
@@ -65,9 +66,10 @@ public class Home {
         frame.add(sider,BorderLayout.WEST);
         frame.add(center,BorderLayout.CENTER);
         //------------//
-        center.add(new BudgetPanel(),"Budget");
+        BudgetPanel budgetPanel = new BudgetPanel(user);
+        center.add(budgetPanel,"Budget");
         center.add(new TransactionPanel(),"Transaction");
-        center.add(new CategoryPanel(),"Category");
+        center.add(new CategoryPanel(user,budgetPanel),"Category");
         center.add(new ReportPanel(),"Report");
         //-------------//
         budget.addActionListener(e->cardLayout.show(center, "Budget"));
@@ -75,10 +77,19 @@ public class Home {
         category.addActionListener(e->cardLayout.show(center, "Category"));
         report.addActionListener(e->cardLayout.show(center, "Report"));
         //--------------//
+        System.out.println(center.getWidth());
+        System.out.println(center.getHeight());
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setLayout(new BorderLayout());
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+    @Override
+    public void windowOpened(java.awt.event.WindowEvent e) {
+        System.out.println("Kích thước thật của center sau khi hiển thị:");
+        System.out.println("Width = " + center.getWidth() + ", Height = " + center.getHeight());
+    }
+});
+
 
     }
 
