@@ -22,12 +22,13 @@ public class BudgetController {
         e.printStackTrace();
     }
 }
-    public ArrayList<Budget> showCategory(){
+    public ArrayList<Budget> showCategory(int userId){
         ArrayList<Budget> list = new ArrayList<>();
-        String sql="select * from budget ";
+        String sql="select * from budget where userId=?";
         try{
             Connection conn=new connectMysql().getConnection();
             PreparedStatement show=conn.prepareStatement(sql);
+            show.setInt(1, userId);
             ResultSet result=show.executeQuery();
             while(result.next()){
             Budget budget = new Budget();

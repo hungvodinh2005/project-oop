@@ -57,9 +57,10 @@ public class CategoryPanel extends javax.swing.JPanel {
         totalChi = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableShow = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
 
         jPanel4.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -272,7 +273,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(153, 255, 204));
         jPanel5.setForeground(new java.awt.Color(102, 255, 204));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo-money-removebg-preview.png"))); // NOI18N
         jLabel1.setText("Danh Mục Thu Chi");
 
@@ -293,22 +294,32 @@ public class CategoryPanel extends javax.swing.JPanel {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(102, 255, 204));
+        jPanel7.setBackground(new java.awt.Color(0, 204, 204));
 
-        tableShow.setBackground(new java.awt.Color(0, 204, 204));
-        tableShow.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        tableShow.setAutoCreateRowSorter(true);
+        tableShow.setBackground(new java.awt.Color(204, 255, 204));
+        tableShow.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         tableShow.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null}
             },
             new String [] {
-                "ID", "Tên Danh Mục", "Loại Thu Chi"
+                "ID", "Danh Mục", "Loại thu Chi"
             }
         ));
-        tableShow.setPreferredSize(new java.awt.Dimension(225, 300));
+        tableShow.setRowHeight(25);
         tableShow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableShowMouseClicked(evt);
@@ -316,17 +327,27 @@ public class CategoryPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableShow);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
+        jLabel7.setText("Danh Sách");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 229, Short.MAX_VALUE))
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -338,21 +359,21 @@ public class CategoryPanel extends javax.swing.JPanel {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(63, 63, 63))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -367,6 +388,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         Category cate=new Category();
         cate.setName(name);
         cate.setType(type);
+        cate.setUserId(user.getId());
         CategoryController cateControl=new CategoryController();
         cateControl.createCategory(cate);
             if (budgetPanel != null) {
@@ -377,7 +399,7 @@ public class CategoryPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_addCategoryActionPerformed
 
     private void showCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showCategoryActionPerformed
-         ArrayList<Category> list = new CategoryController().showCategory();
+         ArrayList<Category> list = new CategoryController().showCategory(user.getId());
 
    
         DefaultTableModel model = (DefaultTableModel) tableShow.getModel();
@@ -394,13 +416,6 @@ public class CategoryPanel extends javax.swing.JPanel {
         tongThuChi();
     }//GEN-LAST:event_showCategoryActionPerformed
 
-    private void tableShowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableShowMouseClicked
-        int position=tableShow.getSelectedRow();
-        idCategory.setText(tableShow.getValueAt(position, 0).toString());
-        nameCategory.setText(tableShow.getValueAt(position, 1).toString());
-        typeCategory.setSelectedItem(tableShow.getValueAt(position, 2).toString());
-    }//GEN-LAST:event_tableShowMouseClicked
-
     private void editCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCategoryActionPerformed
         int id=Integer.parseInt(idCategory.getText());
         String name=nameCategory.getText();
@@ -409,6 +424,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         cate.setId(id);
         cate.setName(name);
         cate.setType(type);
+        cate.setUserId(user.getId());
         CategoryController cateControl=new CategoryController();
         cateControl.editCategory(cate);
     }//GEN-LAST:event_editCategoryActionPerformed
@@ -421,6 +437,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         cate.setId(id);
         cate.setName(name);
         cate.setType(type);
+        cate.setUserId(user.getId());
         CategoryController cateControl=new CategoryController();
         cateControl.deleteCategory(cate);
     }//GEN-LAST:event_deleteCategoryActionPerformed
@@ -428,12 +445,19 @@ public class CategoryPanel extends javax.swing.JPanel {
     private void totalThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalThuActionPerformed
         
     }//GEN-LAST:event_totalThuActionPerformed
+
+    private void tableShowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableShowMouseClicked
+        int position=tableShow.getSelectedRow();
+        idCategory.setText(tableShow.getValueAt(position, 0).toString());
+        nameCategory.setText(tableShow.getValueAt(position, 1).toString());
+        typeCategory.setSelectedItem(tableShow.getValueAt(position, 2).toString());
+    }//GEN-LAST:event_tableShowMouseClicked
     public void tongThuChi(){
         int cnt1=0,cnt2=0;
         CategoryController cate=new CategoryController();
-        ArrayList<Category> arr=cate.showCategory();
+        ArrayList<Category> arr=cate.showCategory(user.getId());
         for(Category x:arr){
-            if(x.getType().equals("Thu Nhập")){
+            if(x.getType().equals("thu nhập")){
             cnt1+=1;
         }else{
                 cnt2+=1;
@@ -444,8 +468,8 @@ public class CategoryPanel extends javax.swing.JPanel {
     }
     private void loadCategoryToComboBox() {
     typeCategory.removeAllItems(); // Xóa dữ liệu cũ
-    typeCategory.addItem("Thu Nhập");
-    typeCategory.addItem("Chi Tiêu");
+    typeCategory.addItem("thu nhập");
+    typeCategory.addItem("chi tiêu");
     
 }
 
@@ -461,12 +485,13 @@ public class CategoryPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameCategory;
     private javax.swing.JButton showCategory;

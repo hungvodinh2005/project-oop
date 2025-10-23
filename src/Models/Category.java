@@ -1,6 +1,7 @@
 package Models;
 public class Category {
     private int id;
+    private int userId;
     private String name;
     private String type; 
 
@@ -34,5 +35,11 @@ public class Category {
 
     public void setType(String type) {
         this.type = type;
+    }
+    public void setUserId(int userId){
+        this.userId=userId;
+    }
+    public int getUserId(int userId){
+        return userId;
     }
 }

@@ -79,7 +79,7 @@ public class Home {
         center.add(budgetPanel, "Budget");
         center.add(new TransactionPanel(), "Transaction");
         center.add(new CategoryPanel(user, budgetPanel), "Category");
-        center.add(new ReportPanel(user), "Report");  // Updated to pass user
+        center.add(new ReportPanel(), "Report");  
         
         //-------------//
         budget.addActionListener(e -> cardLayout.show(center, "Budget"));

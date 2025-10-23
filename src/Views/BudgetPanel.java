@@ -68,11 +68,11 @@ public class BudgetPanel extends javax.swing.JPanel {
         jPanel7 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo-money-removebg-preview.png"))); // NOI18N
         jLabel1.setText("Danh Sách Ngân Sách");
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Tên Danh Mục");
@@ -92,7 +92,7 @@ public class BudgetPanel extends javax.swing.JPanel {
 
         monthBudget.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel7.setText("Thao Tác Ngân Sách");
 
         addBudget.setBackground(new java.awt.Color(204, 204, 255));
@@ -175,7 +175,7 @@ public class BudgetPanel extends javax.swing.JPanel {
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(showBudget)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,9 +205,9 @@ public class BudgetPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Danh Sách Ngân Sách");
 
         tableBudget.setAutoCreateRowSorter(true);
@@ -246,13 +246,10 @@ public class BudgetPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(238, 238, 238)
                 .addComponent(jLabel2)
                 .addContainerGap(224, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,10 +258,10 @@ public class BudgetPanel extends javax.swing.JPanel {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addGap(33, 33, 33))
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel3.setBackground(new java.awt.Color(153, 255, 204));
 
         totalBudget.setEditable(false);
         totalBudget.setBackground(new java.awt.Color(0, 153, 204));
@@ -407,8 +404,8 @@ public class BudgetPanel extends javax.swing.JPanel {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(layout.createSequentialGroup()
-                .addGap(534, 534, 534)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(401, 401, 401)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -416,7 +413,7 @@ public class BudgetPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -466,7 +463,7 @@ public class BudgetPanel extends javax.swing.JPanel {
     private void showBudgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBudgetActionPerformed
         int sum=0;
         BudgetController budgetControl=new BudgetController();
-        ArrayList<Budget> arr=budgetControl.showCategory();
+        ArrayList<Budget> arr=budgetControl.showCategory(user.getId());
         DefaultTableModel model= (DefaultTableModel)tableBudget.getModel();
         model.setRowCount(0);
         for(Budget x:arr){
@@ -500,7 +497,7 @@ public class BudgetPanel extends javax.swing.JPanel {
     public void showSelectBudget(){
        
         CategoryController cate=new CategoryController();
-        ArrayList<Category> arr=cate.showCategory(); 
+        ArrayList<Category> arr=cate.showCategory(user.getId()); 
         selectBudget.removeAllItems();
         for(Category x:arr){
             selectBudget.addItem(String.valueOf(x.getId()));

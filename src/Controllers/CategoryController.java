@@ -27,12 +27,13 @@ public class CategoryController {
         e.printStackTrace();
     }
 }
-    public ArrayList<Category> showCategory(){
+    public ArrayList<Category> showCategory(int userId){
         ArrayList<Category> list = new ArrayList<>();
-        String sql="select * from Category ";
+        String sql="select * from Category where userId=?";
         try{
             Connection conn=new connectMysql().getConnection();
             PreparedStatement show=conn.prepareStatement(sql);
+            show.setInt(1, userId);
             ResultSet result=show.executeQuery();
             while(result.next()){
             Category cate = new Category();
@@ -48,24 +49,26 @@ public class CategoryController {
         return list;
     }
     public void editCategory(Category cate){
-        String sql="update Category set name=?,type=? where id=?";
+        String sql="update Category set name=?,type=? where id=? and userId";
         try{
             Connection conn=new connectMysql().getConnection();
             PreparedStatement edit=conn.prepareStatement(sql);
             edit.setString(1, cate.getName());
             edit.setString(2, cate.getType());
             edit.setString(3, String.valueOf(cate.getId()));
+            edit.setInt(2,cate.getUserId(0));
             edit.executeUpdate();
         }catch(Exception e){
             e.printStackTrace();
         }
     }   
     public void deleteCategory(Category cate){
-        String sql="delete from Category where id=?";
+        String sql="delete from Category where id=? and userId=?";
         try{
             Connection conn=new connectMysql().getConnection();
             PreparedStatement delete=conn.prepareStatement(sql);
             delete.setInt(1, cate.getId());
+            delete.setInt(2,cate.getUserId(0));
             delete.executeUpdate();
         }catch(Exception e){
             e.printStackTrace();
