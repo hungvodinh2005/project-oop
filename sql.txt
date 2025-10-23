@@ -1,0 +1,135 @@
+CREATE TABLE data.users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+CREATE TABLE data.category (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    type ENUM('thu nhập', 'chi tiêu') NOT NULL,
+    description VARCHAR(255),
+    FOREIGN KEY (userId) REFERENCES data.users(id) ON DELETE CASCADE
+);
+/*CREATE TABLE data.transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    categoryId INT NOT NULL,
+    money DECIMAL(15,2) NOT NULL,
+    date DATETIME NOT NULL,
+    description VARCHAR(255),
+    FOREIGN KEY (userId) REFERENCES data.users(id) ON DELETE CASCADE,
+    FOREIGN KEY (categoryId) REFERENCES data.category(id) ON DELETE CASCADE
+);*/
+/*CREATE TABLE data.budget (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    categoryId INT NOT NULL,
+    month VARCHAR(20) NOT NULL,
+    limitAmount DOUBLE NOT NULL,
+    FOREIGN KEY (userId) REFERENCES data.users(id) ON DELETE CASCADE,
+    FOREIGN KEY (categoryId) REFERENCES data.category(id) ON DELETE CASCADE
+);*/
+/*INSERT INTO data.users (username, password) VALUES
+('hung', '123456'),
+('linh', '123456'),
+('tuan', '123456'),
+('thao', '123456');*/
+/* INTO data.category (userId, name, type, description) VALUES
+-- 🌟 Hưng
+(1, 'Lương', 'thu nhập', 'Lương hàng tháng'),
+(1, 'Thưởng', 'thu nhập', 'Thưởng dự án, quý'),
+(1, 'Kinh doanh', 'thu nhập', 'Doanh thu ngoài lề'),
+(1, 'Ăn uống', 'chi tiêu', 'Ăn sáng, trưa, tối'),
+(1, 'Đi lại', 'chi tiêu', 'Xăng xe, vé xe bus'),
+(1, 'Học tập', 'chi tiêu', 'Sách vở, khóa học'),
+(1, 'Giải trí', 'chi tiêu', 'Xem phim, cà phê'),
+(1, 'Hóa đơn điện nước', 'chi tiêu', 'Tiền điện, nước, internet'),
+(1, 'Mua sắm', 'chi tiêu', 'Quần áo, đồ dùng'),
+(1, 'Y tế', 'chi tiêu', 'Khám bệnh, thuốc men'),
+
+--  Linh
+(2, 'Lương', 'thu nhập', 'Thu nhập chính'),
+(2, 'Thưởng', 'thu nhập', 'Thưởng lễ/tết'),
+(2, 'Ăn uống', 'chi tiêu', 'Chi phí ăn uống hàng ngày'),
+(2, 'Đi lại', 'chi tiêu', 'Xăng xe'),
+(2, 'Học tập', 'chi tiêu', 'Khóa học online'),
+(2, 'Giải trí', 'chi tiêu', 'Xem phim, cà phê'),
+(2, 'Mua sắm', 'chi tiêu', 'Quần áo, phụ kiện'),
+
+-- Tuấn
+(3, 'Lương', 'thu nhập', 'Thu nhập công việc'),
+(3, 'Ăn uống', 'chi tiêu', 'Ăn uống hàng ngày'),
+(3, 'Học tập', 'chi tiêu', 'Khóa học, sách'),
+(3, 'Mua sắm', 'chi tiêu', 'Đồ cá nhân'),
+(3, 'Giải trí', 'chi tiêu', 'Xem phim, game'),
+
+--  Thảo
+(4, 'Lương', 'thu nhập', 'Lương cơ bản'),
+(4, 'Thưởng', 'thu nhập', 'Thưởng hiệu suất'),
+(4, 'Ăn uống', 'chi tiêu', 'Chi phí ăn uống'),
+(4, 'Đi lại', 'chi tiêu', 'Đi lại hàng ngày'),
+(4, 'Giải trí', 'chi tiêu', 'Du lịch, phim ảnh'),
+(4, 'Y tế', 'chi tiêu', 'Khám sức khỏe, thuốc men');*/
+/*INSERT INTO data.transactions (userId, categoryId, money, date, description) VALUES
+--  Hưng (userId = 1)
+(1, 1, 15000000, '2025-09-01 09:00:00', 'Nhận lương tháng 9'),
+(1, 4, 120000, '2025-09-02 12:00:00', 'Ăn trưa với bạn'),
+(1, 5, 80000, '2025-09-03 08:30:00', 'Đổ xăng đi làm'),
+(1, 6, 450000, '2025-09-05 19:00:00', 'Mua sách lập trình'),
+(1, 7, 200000, '2025-09-07 21:00:00', 'Xem phim CGV'),
+(1, 8, 750000, '2025-09-10 10:00:00', 'Đóng tiền điện nước'),
+(1, 9, 900000, '2025-09-15 16:00:00', 'Mua quần áo mới'),
+(1, 10, 300000, '2025-09-22 14:00:00', 'Khám bệnh tổng quát'),
+
+--  Linh (userId = 2)
+(2, 11, 12000000, '2025-10-01 08:00:00', 'Lương tháng 10'),
+(2, 13, 90000, '2025-10-02 12:00:00', 'Ăn trưa công ty'),
+(2, 14, 150000, '2025-10-03 07:30:00', 'Đổ xăng đi làm'),
+(2, 15, 350000, '2025-10-04 18:00:00', 'Khóa học online Python'),
+(2, 16, 250000, '2025-10-05 20:00:00', 'Đi xem phim'),
+(2, 17, 700000, '2025-10-06 16:00:00', 'Mua áo khoác mới'),
+(2, 12, 2000000, '2025-10-07 09:00:00', 'Thưởng lễ 2/9'),
+
+--  Tuấn (userId = 3)
+(3, 18, 10000000, '2025-10-01 09:00:00', 'Lương tháng 10'),
+(3, 19, 200000, '2025-10-02 12:30:00', 'Ăn uống cuối tuần'),
+(3, 20, 350000, '2025-10-03 19:00:00', 'Mua sách lập trình C++'),
+(3, 21, 1500000, '2025-10-04 17:00:00', 'Mua điện thoại mới'),
+(3, 22, 150000, '2025-10-08 20:00:00', 'Đi cà phê cùng bạn'),
+
+--  Thảo (userId = 4)
+(4, 23, 18000000, '2025-10-01 09:00:00', 'Lương tháng 10'),
+(4, 24, 2500000, '2025-10-02 14:00:00', 'Thưởng hiệu suất'),
+(4, 25, 180000, '2025-10-03 12:00:00', 'Ăn trưa công sở'),
+(4, 26, 800000, '2025-10-04 09:00:00', 'Thanh toán tiền xăng'),
+(4, 27, 400000, '2025-10-06 20:00:00', 'Đi xem phim cùng bạn bè'),
+(4, 28, 1000000, '2025-10-07 10:00:00', 'Khám sức khỏe định kỳ');*/
+/*INSERT INTO data.budget (userId, categoryId, month, limitAmount) VALUES
+-- Hưng
+(1, 4, '2025-10', 2000000),
+(1, 5, '2025-10', 1000000),
+(1, 6, '2025-10', 1500000),
+(1, 7, '2025-10', 1000000),
+(1, 8, '2025-10', 1000000),
+(1, 9, '2025-10', 2000000),
+
+--  Linh
+(2, 13, '2025-10', 1500000),
+(2, 14, '2025-10', 800000),
+(2, 16, '2025-10', 1000000),
+(2, 17, '2025-10', 1500000),
+
+-- Tuấn
+(3, 19, '2025-10', 1000000),
+(3, 20, '2025-10', 1000000),
+(3, 22, '2025-10', 2500000),
+
+-- Thảo
+(4, 25, '2025-10', 1500000),
+(4, 26, '2025-10', 1000000),
+(4, 27, '2025-10', 3000000),
+(4, 28, '2025-10', 1200000);*/
+
+
+
