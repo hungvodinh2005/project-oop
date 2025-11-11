@@ -2,16 +2,16 @@
 package Models;
 import java.util.Date;
 public class Transaction {
-    private int id;
+    private String id;
     private int userId;
-    private int categoryId;
+    private String categoryId;
     private double money;
     private Date date;
     private String description;
 
     public Transaction() {}
 
-    public Transaction(int id, int userId, int categoryId, double money, Date date, String description) {
+    public Transaction(String id, int userId, String categoryId, double money, Date date, String description) {
         this.id = id;
         this.userId = userId;
         this.categoryId = categoryId;
@@ -20,11 +20,11 @@ public class Transaction {
         this.description = description;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -36,19 +36,19 @@ public class Transaction {
         this.userId = userId;
     }
 
-    public int getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 
-    public double getAmount() {
+    public double getMoney() {
         return money;
     }
 
-    public void setAmount(double amount) {
+    public void setMoney(double amount) {
         this.money = amount;
     }
 

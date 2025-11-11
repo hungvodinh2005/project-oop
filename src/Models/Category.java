@@ -1,23 +1,23 @@
 package Models;
 public class Category {
-    private int id;
+    private String id;
     private int userId;
     private String name;
     private String type; 
 
     public Category() {}
 
-    public Category(int id, String name, String type) {
+    public Category(String id, String name, String type) {
         this.id = id;
         this.name = name;
         this.type = type;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -39,7 +39,7 @@ public class Category {
     public void setUserId(int userId){
         this.userId=userId;
     }
-    public int getUserId(int userId){
+    public int getUserId(){
         return userId;
     }
 }

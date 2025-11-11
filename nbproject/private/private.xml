@@ -3,20 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/TransactionPanel.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/Login.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/Budget.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/Transaction.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/User.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/TransactionController.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/LoginController.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/CategoryController.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/BudgetController.java</file>
             <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/Home.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/Category.java</file>
             <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/CategoryPanel.java</file>
-            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/BudgetPanel.java</file>
             <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/ReportPanel.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/TransactionController.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/Budget.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/Category.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/CategoryController.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/LoginController.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/Login.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/BudgetController.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/TransactionPanel.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/User.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/images/edit-removebg-preview.png</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/ReportController.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Models/Transaction.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/BudgetPanel.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/SettingPanel.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/SettingController.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Views/AdvicePanel.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/AdviceController.java</file>
+            <file>file:/C:/Users/DINHHUNG/Desktop/project-oop/src/Controllers/OpenAIClient.java</file>
         </group>
     </open-files>
 </project-private>

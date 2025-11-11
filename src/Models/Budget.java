@@ -1,14 +1,14 @@
 package Models;
 public class Budget {
-    private int id;
+    private String id;
     private int userId;
-    private int categoryId;
+    private String categoryId;
     private String month; 
     private double limitAmount;
 
     public Budget() {}
 
-    public Budget(int id, int userId, int categoryId, String month, double limitAmount) {
+    public Budget(String id, int userId, String categoryId, String month, double limitAmount) {
         this.id = id;
         this.userId = userId;
         this.categoryId = categoryId;
@@ -16,11 +16,11 @@ public class Budget {
         this.limitAmount = limitAmount;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -32,11 +32,11 @@ public class Budget {
         this.userId = userId;
     }
 
-    public int getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 
