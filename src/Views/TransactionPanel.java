@@ -53,7 +53,7 @@ public class TransactionPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        moneyTrans = new javax.swing.JTextField();
+        search = new javax.swing.JTextField();
         selectTrans = new javax.swing.JComboBox<>();
         dateTrans = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -68,6 +68,7 @@ public class TransactionPanel extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         idTrans = new javax.swing.JTextField();
         createId = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -99,7 +100,7 @@ public class TransactionPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 204, 204));
@@ -110,7 +111,12 @@ public class TransactionPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
         jLabel3.setText("Số Tiền");
 
-        moneyTrans.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        search.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
 
         selectTrans.setBackground(new java.awt.Color(153, 204, 255));
         selectTrans.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
@@ -191,22 +197,42 @@ public class TransactionPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(addTrans)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(editTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(deleteTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(showTrans))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(selectTrans, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(moneyTrans)
+                            .addComponent(search)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -215,17 +241,7 @@ public class TransactionPanel extends javax.swing.JPanel {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(idTrans)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(createId))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(addTrans)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(editTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(deleteTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(showTrans))
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                                .addComponent(createId)))))
                 .addGap(32, 32, 32))
         );
         jPanel2Layout.setVerticalGroup(
@@ -242,12 +258,15 @@ public class TransactionPanel extends javax.swing.JPanel {
                     .addComponent(idTrans, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel2))
                     .addComponent(selectTrans, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(moneyTrans, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -326,7 +345,7 @@ public class TransactionPanel extends javax.swing.JPanel {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 102));
@@ -412,17 +431,13 @@ public class TransactionPanel extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(totalUse, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(totalEarn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,6 +446,10 @@ public class TransactionPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -452,7 +471,7 @@ public class TransactionPanel extends javax.swing.JPanel {
         String id = idTrans.getText().trim();
         String categoryIdName = selectTrans.getSelectedItem().toString();
         String categoryId = categoryIdName.split("\\-")[0].trim(); 
-        double money = Double.parseDouble(moneyTrans.getText().trim());
+        double money = Double.parseDouble(search.getText().trim());
         String description = descriptionTrans.getText().trim();
         String date=dateTrans.getText();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -501,7 +520,7 @@ public class TransactionPanel extends javax.swing.JPanel {
         transactionController.createTransaction(transaction);
         JOptionPane.showMessageDialog(this, "Thêm giao dịch thành công!");
         idTrans.setText("");
-        moneyTrans.setText("");
+        search.setText("");
         descriptionTrans.setText("");
         dateTrans.setText("");
         selectTrans.setSelectedIndex(0);
@@ -512,7 +531,7 @@ public class TransactionPanel extends javax.swing.JPanel {
         String id = idTrans.getText().trim();
         String categoryIdName = selectTrans.getSelectedItem().toString();
         String categoryId = categoryIdName.split("\\-")[0].trim(); 
-        double money = Double.parseDouble(moneyTrans.getText().trim());
+        double money = Double.parseDouble(search.getText().trim());
         String description = descriptionTrans.getText().trim();
         String date=dateTrans.getText();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -540,7 +559,7 @@ public class TransactionPanel extends javax.swing.JPanel {
         String id = idTrans.getText().trim();
         String categoryIdName = selectTrans.getSelectedItem().toString();
         String categoryId = categoryIdName.split("\\-")[0].trim(); 
-        double money = Double.parseDouble(moneyTrans.getText().trim());
+        double money = Double.parseDouble(search.getText().trim());
         String description = descriptionTrans.getText().trim();
         String date=dateTrans.getText();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -610,7 +629,7 @@ public class TransactionPanel extends javax.swing.JPanel {
         Transaction trans=new TransactionController().getTransactions(idTransaction);
         idTrans.setText(trans.getId());
         selectTrans.setSelectedItem(trans.getCategoryId()+"-"+new CategoryController().getCategoryById(trans.getCategoryId()).getName());
-        moneyTrans.setText(String.valueOf(trans.getMoney()));
+        search.setText(String.valueOf(trans.getMoney()));
         dateTrans.setText(sdf.format(trans.getDate()));
         descriptionTrans.setText(trans.getDescription());
         
@@ -619,6 +638,35 @@ public class TransactionPanel extends javax.swing.JPanel {
     private void totalEarnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalEarnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_totalEarnActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+      
+       
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        double soTien=Double.parseDouble(search.getText());
+      TransactionController controller=new TransactionController();
+      int userId =user.getId(); 
+        ArrayList<Transaction> list = controller.getTransactionsByMonth(userId);
+
+        
+        DefaultTableModel model = (DefaultTableModel) tableShow.getModel();
+        model.setRowCount(0); 
+
+        for (Transaction t : list) {
+            if(t.getMoney()>soTien){
+                model.addRow(new Object[]{
+                t.getId(),
+                new CategoryController().getCategoryById(t.getCategoryId()).getName(),
+                String.format("%,.0f", t.getMoney()), 
+                new SimpleDateFormat("dd/MM/yyyy").format(t.getDate()),
+                t.getDescription()
+            });
+            }
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     public void showSelectTrans(){
        
         CategoryController cate=new CategoryController();
@@ -641,6 +689,7 @@ public class TransactionPanel extends javax.swing.JPanel {
     private javax.swing.JTextArea descriptionTrans;
     private javax.swing.JButton editTrans;
     private javax.swing.JTextField idTrans;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -659,7 +708,7 @@ public class TransactionPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField moneyTrans;
+    private javax.swing.JTextField search;
     private javax.swing.JComboBox<String> selectTrans;
     private javax.swing.JButton showTrans;
     private javax.swing.JTable tableShow;

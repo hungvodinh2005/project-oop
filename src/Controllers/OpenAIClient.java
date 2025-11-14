@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class OpenAIClient {
     
-    private  final String API_KEY = "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";
+    private  final String API_KEY = "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";
 
     
     private  final String ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
